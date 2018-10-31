@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="currenctConverterApp">
   <head>
-    <title>Currency Converter</title> 
+    <title>Конвертер Валют</title> 
     <link rel="stylesheet" href="styles.css">
     <script src="scripts/angular.js"></script>
     <script src="app/controllers/currencyConverter.controller.js"></script>
@@ -9,7 +9,7 @@
   <body>
 
     <div ng-controller = "currencyController" class="center" >
-      <h1>Simple Currency Converter With AngularJs</h1>
+      <h1>Простой как палка конвертер валют</h1>
       <input class="miktar" type="number" ng-init="quantity=1" ng-model="quantity" ng-change="onCountryUpdate()" >
       <!--Convert currency From this country-->
       <select class="dropdown" ng-model="fromCountry" ng-change="onCountryUpdate()">
@@ -23,6 +23,6 @@
       <br>
       <p><strong>{{quantity}}</strong> {{currencyData.codes[fromCountry]|lowercase}} == <strong ng-bind="result"></strong> {{currencyData.codes[toCountry]|lowercase}} </p>
     </div>
-    <footer class="footer"> <p><a href="http://isaes.com.tr">@КЕК</a></p></footer>
+    <footer class="footer"> <p><a href="https://adramales.github.io/">Поставте 25 этому парню</a></p></footer>
   </body>
 </html>
