@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="currenctConverterApp">
+  <head>
+    <title>Currency Converter</title> 
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts/angular.js"></script>
+    <script src="app/controllers/currencyConverter.controller.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <div ng-controller = "currencyController" class="center" >
+      <h1>Simple Currency Converter With AngularJs</h1>
+      <input class="miktar" type="number" ng-init="quantity=1" ng-model="quantity" ng-change="onCountryUpdate()" >
+      <!--Convert currency From this country-->
+      <select class="dropdown" ng-model="fromCountry" ng-change="onCountryUpdate()">
+          <option ng-repeat="(key, names) in currencyData.codes " value="{{key}}">{{names}}</option>
+      </select>
+      <!--To this country-->
+      <select class="dropdown" ng-model="toCountry" ng-change="onCountryUpdate()">
+          <option ng-repeat="(key, names) in currencyData.codes " value="{{key}}">{{names}}</option>
+      </select>
+      <button class="button" ng-click="changeConversionDirection()"> <i class="far fa-exchange"></i></button>
+      <br>
+      <p><strong>{{quantity}}</strong> {{currencyData.codes[fromCountry]|lowercase}} == <strong ng-bind="result"></strong> {{currencyData.codes[toCountry]|lowercase}} </p>
+    </div>
+    <footer class="footer"> <p><a href="http://isaes.com.tr">@Isa Es</a></p></footer>
+  </body>
+</html>
